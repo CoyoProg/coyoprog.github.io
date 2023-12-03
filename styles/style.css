@@ -98,6 +98,12 @@ nav a {
   text-transform: uppercase;
   text-decoration: none;
   color: white;
+  transition: color 0.3s ease; /* Add a transition effect on the color property */
+}
+
+nav a:hover 
+{
+  color: lightgreen; /* Change the color to the desired hover color */
 }
 
 /* VIDEOS */
