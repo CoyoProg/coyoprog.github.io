@@ -1,34 +1,22 @@
 html {
-  font-size: 25px;
-  font-family: 'Kalam', cursive;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Victor Mono', monospace;
 }
 
 h1 {
-  margin: 0;
-  padding: 20px 0;
   color: white;
-  text-shadow: 3px 3px 1px black;
-
-  font-size: 60px;
-  text-align: center;
-}
-
-h2 {
-  margin: 0;
-  padding: 20px 0;
-  color: white;
-  text-shadow: 3px 3px 1px black;
-
-  font-size: 25px;
+  letter-spacing: 1px;
+  line-height: 1;
+  font-size: 100px;
   text-align: center;
 }
 
 p,
 li,
 a {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 
   color: white;
 }
@@ -57,59 +45,65 @@ footer {
 }
 
 /* NAVIGATION */
-nav 
-{
+nav {
   --above-all-in-container: 10000;
   position: fixed !important;
   height: 50px;
   width: 100%;
   margin-left: 0;
   left: 0;
-  top:0;
+  top: 0;
   background-color: #011311;
   display: flex;
-  align-items: center; /* Center the items vertically */
+  align-items: center;
+  /* Center the items vertically */
 }
 
-.nav-right
-{
-  display: flex;
-  flex: 1;
-  justify-content: flex-end; /* Align items to the right */
-  align-items: center; /* Center the items vertically */
-}
-
-.nav-left
-{
-  display: flex;
-  flex: 1;
-  justify-content: flex-start; /* Align items to the left */
-  align-items: center; /* Center the items vertically */
-}
-
-nav li 
-{
+nav li {
   display: inline;
-  margin-right: 10%;
+  margin-right: 5%;
 }
+
+
+.nav-right {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  /* Align items to the right */
+  align-items: center;
+}
+
+.nav-left {
+  padding-right: 0;
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  /* Align items to the left */
+  align-items: center;
+
+  margin-right: 0;
+}
+
 
 nav a {
   font-size: 20px;
   text-transform: uppercase;
   text-decoration: none;
   color: white;
-  transition: color 0.3s ease; /* Add a transition effect on the color property */
+  transition: color 0.3s ease;
+  /* Add a transition effect on the color property */
 }
 
-nav a:hover 
-{
-  color: lightgreen; /* Change the color to the desired hover color */
+nav a:hover {
+  color: lightgreen;
+  /* Change the color to the desired hover color */
 }
 
 /* VIDEOS */
 .video-container {
   position: relative;
-  height: 100vh; /* Adjust as needed */
+  height: 100vh;
+  /* Adjust as needed */
   overflow: hidden;
 }
 
@@ -117,7 +111,7 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  bottom  : 50px;
+  bottom: 50px;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -125,7 +119,7 @@ video {
 
 .content {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
