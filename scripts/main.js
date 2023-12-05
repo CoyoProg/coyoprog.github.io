@@ -12,3 +12,13 @@ myImage.onclick = () =>
         myImage.setAttribute("src", "images/pusheen.png");
     }
 };
+
+document.addEventListener('DOMContentLoaded', function() 
+{
+    var video = document.getElementById('backgroundvideo');
+
+    document.addEventListener('click', function() 
+    {
+        video.play();
+    });
+});
