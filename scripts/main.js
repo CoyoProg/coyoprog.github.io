@@ -1,4 +1,5 @@
 const myImage = document.querySelector("img");
+const myVideo = document.querySelector("video");
 let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
 
@@ -13,12 +14,7 @@ myImage.onclick = () =>
     }
 };
 
-document.addEventListener('DOMContentLoaded', function() 
+myVideo.onclick = () => 
 {
-    var video = document.getElementById('backgroundvideo');
-
-    document.addEventListener('click', function() 
-    {
-        video.play();
-    });
-});
+    myVideo.play();
+}
