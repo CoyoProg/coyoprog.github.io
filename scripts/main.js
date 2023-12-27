@@ -1,30 +1,42 @@
 const myImage = document.querySelector("img");
 const myVideo = document.querySelector("video");
-let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
 
+const playButton = document.getElementById("playButton");
 
 /* Functions */
-if (myImage) 
-{
-    myImage.onclick = () => 
-    {
+if (myImage) {
+    myImage.onclick = () => {
         const mySrc = myImage.getAttribute("src");
-        if (mySrc === "images/pusheen.png") 
-        {
+        if (mySrc === "images/pusheen.png") {
             myImage.setAttribute("src", "images/pusheenangry.png");
-        } else 
-        {
+        } else {
             myImage.setAttribute("src", "images/pusheen.png");
         }
     };
 }
 
-if (myVideo) 
-{
-    myVideo.onclick = () => 
-    {
-        myVideo.play();
+if (playButton && myVideo) {
+    myVideo.onloadeddata = () => {
+        const videoContainer = document.querySelector(".video-container");
+        videoContainer.classList.add("fade-in");
+
+        setTimeout
+            (function () {
+                if (!myVideo.paused)
+                    playButton.style.display = "none";
+                if (myVideo.paused)
+                    playButton.style.display = "block";
+            }, 2000
+            );
+
+    };
+
+    playButton.onclick = () => {
+        if (myVideo.paused) {
+            myVideo.play();
+            playButton.style.display = "none";
+        }
     };
 }
 
@@ -41,3 +53,4 @@ if (cardsElement) {
         }
     };
 }
+
