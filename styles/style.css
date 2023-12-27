@@ -48,7 +48,6 @@ body {
   justify-content: center;
   overflow: hidden;
   background-color: var(--bg-color);
-
 }
 
 /* CARDS */
@@ -306,6 +305,11 @@ article {
 
 @media(max-width: 1000px) 
 {
+  nav {
+    position: relative;
+    z-index: 1;
+  }
+
   body 
   {
     align-items: center;  
@@ -316,6 +320,7 @@ article {
   {    
     max-width: 1000px;
     padding: 10px 0px;
+    z-index: 0;
   }
   
   .card 
