@@ -209,7 +209,6 @@ nav {
   background-color: var(--nav-color);
   display: flex;
   align-items: center;
-  /* Center the items vertically */
 
   z-index: 10;
 }
@@ -224,7 +223,7 @@ nav li {
   display: flex;
   flex: 1;
   justify-content: flex-end;
-  /* Align items to the right */
+
   align-items: center;
 }
 
@@ -233,7 +232,6 @@ nav li {
   display: flex;
   flex: 1;
   justify-content: flex-start;
-  /* Align items to the left */
   align-items: center;
 
   margin-right: 0;
@@ -246,12 +244,10 @@ nav a {
   text-decoration: none;
   color: white;
   transition: color 0.3s ease;
-  /* Add a transition effect on the color property */
 }
 
 nav a:hover {
   color: var(--palette5);
-  /* Change the color to the desired hover color */
 }
 
 /* VIDEOS */
@@ -259,12 +255,11 @@ nav a:hover {
 {
   position: relative;
   height: 100vh;
-  /* Adjust as needed */
   overflow: hidden;
   flex:1;
 
-  opacity: 0; /* Set initial opacity to 0 */
-  transition: opacity 2s ease-in-out; /* Apply transition on opacity property over 1 second */
+  opacity: 0; 
+  transition: opacity 2s ease-in-out; 
 }
 
 video 
@@ -298,7 +293,7 @@ video
 
 .video-container.fade-in
 {
-  opacity: 1; /* Set final opacity to 1 when fade-in class is applied */
+  opacity: 1;
 }
 
 #playButton:hover
@@ -315,49 +310,70 @@ video
   text-align: center;
 }
 
-/* ARTICLE */
-article {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  /* Center vertically */
-}
-
-.presentation {
+/* PRESENTATION */
+.presentation 
+{
   color: white;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  /* Center vertically */
+
+  align-items: flex-start;
   text-align: left;
-  height: 70vh;
+
+  padding-bottom: 5%;
+  padding-left: 5%;
+  margin-top: 75px;
   margin-left: 5%;
-  margin-right: 25%;
+  margin-right: 10%;
+  margin-bottom: 25px;
+
+  opacity: 0; 
+  animation: fadeIn 1.5s forwards;
 }
 
-.presentation img {
+@keyframes fadeIn 
+{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.presentation img 
+{
   width: 250px;
   margin-right: 20px;
-  /* Add margin to the right of the image */
+  margin-top:20px;
 }
 
-.presentation-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.presentation h2 {
+.presentation h2 
+{
+  color: var(--palette5);
   margin-bottom: 10px;
-  /* Add margin below the h2 */
 }
 
+.presentation a 
+{
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--palette5);
+}
+
+.presentation p
+{
+  line-height: 1.75; /* Adjust this value as needed */
+}
+
+.presentation a:hover
+{
+  color: var(--palette4);
+}
 
 
 /* -- ↓ ↓ ↓ some responsiveness ↓ ↓ ↓ -- */
-
 @media(max-width: 1000px) 
 {
   body 
@@ -378,6 +394,13 @@ article {
     width: calc(50% - 4px);
     height: 25vh;
   }
+
+  .presentation
+  {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0;
+  }
 }
 
 @media(max-width: 500px) 
@@ -385,6 +408,11 @@ article {
   .card 
   {
     height: 200px;
+  }
+
+  footer
+  {
+    display: none;
   }
 }
 
