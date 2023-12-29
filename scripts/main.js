@@ -20,20 +20,29 @@ if (myImage)
 
 if (playButton && myVideo) 
 {
-    myVideo.onloadeddata = () => {
+    let isPageVisible = true;
+    
+    // Handle visibility change
+    document.addEventListener("visibilitychange", () => 
+    {
+        isPageVisible = !document.hidden;
+    });
+
+    myVideo.onloadeddata = () => 
+    {
         const videoContainer = document.querySelector(".video-container");
         videoContainer.classList.add("fade-in");
 
-        setTimeout
-            (function () 
+        setInterval(() =>
+        {
+            if (!myVideo.paused)
             {
-                if (!myVideo.paused)
-                    playButton.style.display = "none";
-                if (myVideo.paused)
-                    playButton.style.display = "block";
-            }, 2000
-            );
-
+                playButton.style.display = "none";
+                console.log("Video is playing");
+            }
+            if (myVideo.paused && isPageVisible)
+                playButton.style.display = "block";
+        }, 1000);
     };
 
     playButton.onclick = () => 
