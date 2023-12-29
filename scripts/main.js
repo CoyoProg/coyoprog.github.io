@@ -5,8 +5,10 @@ let myHeading = document.querySelector("h1");
 const playButton = document.getElementById("playButton");
 
 /* Functions */
-if (myImage) {
-    myImage.onclick = () => {
+if (myImage) 
+{
+    myImage.onclick = () => 
+    {
         const mySrc = myImage.getAttribute("src");
         if (mySrc === "images/pusheen.png") {
             myImage.setAttribute("src", "images/pusheenangry.png");
@@ -16,13 +18,15 @@ if (myImage) {
     };
 }
 
-if (playButton && myVideo) {
+if (playButton && myVideo) 
+{
     myVideo.onloadeddata = () => {
         const videoContainer = document.querySelector(".video-container");
         videoContainer.classList.add("fade-in");
 
         setTimeout
-            (function () {
+            (function () 
+            {
                 if (!myVideo.paused)
                     playButton.style.display = "none";
                 if (myVideo.paused)
@@ -32,7 +36,8 @@ if (playButton && myVideo) {
 
     };
 
-    playButton.onclick = () => {
+    playButton.onclick = () => 
+    {
         if (myVideo.paused) {
             myVideo.play();
             playButton.style.display = "none";
@@ -53,4 +58,21 @@ if (cardsElement) {
         }
     };
 }
+
+const navLinks = document.querySelector(".nav-right");
+if (navLinks) 
+{
+    const navLinksArray = Array.from(navLinks.querySelectorAll('.nav-link'));
+
+    const currentPageUrl = window.location.href;
+
+    navLinksArray.forEach(link => 
+        {
+        if (link.href === currentPageUrl) 
+        {
+            link.classList.add('active');
+        }
+    });
+}
+
 
